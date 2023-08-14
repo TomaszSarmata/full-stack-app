@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import BookItem from "./book-item";
-import books from "./books";
 
 export default function BooksGrid() {
   const [books, setBooks] = useState([]);
@@ -17,8 +16,8 @@ export default function BooksGrid() {
 
   return (
     <div className="w-full grid grid-cols-3 gap-4">
-      {books.map((book) => {
-        return <BookItem book={book}></BookItem>;
+      {books.map((book, index) => {
+        return <BookItem book={book} key={index}></BookItem>;
       })}
     </div>
   );
