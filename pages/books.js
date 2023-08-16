@@ -11,7 +11,7 @@ export default function BooksPage() {
         <BooksGrid></BooksGrid>
       </div>
       <ProgramaticButton pageName="Home" href="/"></ProgramaticButton>
-      <Footer href="/" pageName="Home"></Footer>
+      <Footer href="/" pageName="Home Page"></Footer>
     </div>
   );
 }

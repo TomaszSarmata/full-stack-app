@@ -11,7 +11,7 @@ export default function Home() {
 
       <ProgramaticButton pageName="Books" href="/books"></ProgramaticButton>
 
-      <Footer href="/books" pageName="Books"></Footer>
+      <Footer href="/books" pageName="Books Page"></Footer>
     </div>
   );
 }
