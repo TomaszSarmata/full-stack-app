@@ -5,6 +5,7 @@ import Footer from "@/components/shared/footer";
 import ProgramaticButton from "@/components/shared/programmatic-button";
 import Content from "@/components/shared/content";
 import Hero from "@/components/home/hero";
+import Topics from "@/components/home/hero/topics";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       ></Hero>
 
       <Content>
+        <Topics></Topics>
         <ProgramaticButton pageName="Books" href="/books"></ProgramaticButton>
       </Content>
 
