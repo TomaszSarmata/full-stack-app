@@ -1,13 +1,4 @@
-const topics = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Github",
-  "JavaScript",
-  "HTML",
-  "Tailwind/CSS",
-];
+import topics from "./topics";
 
 export default function Topics() {
   return (
