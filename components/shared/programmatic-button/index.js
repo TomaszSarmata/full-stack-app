@@ -9,14 +9,12 @@ export default function ProgramaticButton({ href, pageName }) {
     router.push(`${href}`);
   };
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <button
-        onClick={handleClick}
-        className="bg-blue-500 text-white py-1 px-3 rounded-md mt-5"
-      >
-        Click me!<br></br>
-        <span className="text-xs text-gray-200">programatic navigation</span>
-      </button>
-    </div>
+    <button
+      onClick={handleClick}
+      className="bg-blue-500 text-white py-1 px-3 rounded-md mt-8"
+    >
+      Click me!<br></br>
+      <span className="text-xs text-gray-200">programatic navigation</span>
+    </button>
   );
 }
