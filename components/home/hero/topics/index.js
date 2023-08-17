@@ -10,9 +10,9 @@ const topics = [
 
 export default function Topics() {
   return (
-    <div>
-      <h2 className="text-2xl font-bold">Topics Covered</h2>
-      <ul className="my-5 list-disc">
+    <div className="w-full flex flex-col gap-4">
+      <h3 className="text-2xl font-medium">Topics Covered</h3>
+      <ul className=" list-disc flex flex-col mb-4 space-y-2">
         {topics.map((topic, index) => {
           return <li key={index}>{topic}</li>;
         })}
