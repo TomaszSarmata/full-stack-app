@@ -1,6 +1,7 @@
 const topics = [
   "React",
   "Next.js",
+  "Node.js",
   "Git",
   "Github",
   "JavaScript",
