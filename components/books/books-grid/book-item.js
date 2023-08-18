@@ -12,6 +12,14 @@ export default function BookItem({ book }) {
     }
   };
 
+  const numberOfDislikes = () => {
+    if (dislikes === 1) {
+      return "dislike";
+    } else {
+      return "dislikes";
+    }
+  };
+
   const handleLike = () => {
     setLikes(likes + 1);
   };
@@ -38,7 +46,7 @@ export default function BookItem({ book }) {
           onClick={handleDislike}
           className="bg-red-500 text-white px-3 py-1 rounded-md"
         >
-          Dislike ({dislikes} dislikes)
+          Dislike ({dislikes} {numberOfDislikes()})
         </button>
       </div>
     </div>
