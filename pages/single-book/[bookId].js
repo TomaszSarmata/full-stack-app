@@ -1,5 +1,8 @@
+import Header from "@/components/shared/header";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Hero from "@/components/home/hero";
+import Footer from "@/components/shared/footer";
 
 export default function SingleBook() {
   const [singleBook, setSingleBook] = useState(null);
@@ -25,10 +28,17 @@ export default function SingleBook() {
   }
 
   return (
-    <div>
-      <img className="h-44" src={singleBook.imgUrl} alt="" />
-      <p>{singleBook.title}</p>
-      <p>{singleBook.author}</p>
+    <div className="w-full">
+      <Header name="Book Details Page"></Header>
+      <Hero
+        imgUrl={singleBook.imgUrl}
+        title={singleBook.title}
+        subtitle={singleBook.author}
+      ></Hero>
+      <Footer
+        pageName="Next book"
+        href={`/single-book/${+singleBook.id + 1}`}
+      ></Footer>
     </div>
   );
 }
