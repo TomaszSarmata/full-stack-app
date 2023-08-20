@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Hero from "@/components/home/hero";
 import Footer from "@/components/shared/footer";
+import Content from "@/components/shared/content";
 
 export default function SingleBook() {
   const [singleBook, setSingleBook] = useState(null);
@@ -35,6 +36,15 @@ export default function SingleBook() {
         title={singleBook.title}
         subtitle={singleBook.author}
       ></Hero>
+      <Content>
+        <div className="w-full">
+          <div className="bg-blue-500 w-1/6 py-1 px-3 rounded-md text-white ">
+            <a href={singleBook.linkToPurchase} target="_blank">
+              Buy on Amazon
+            </a>
+          </div>
+        </div>
+      </Content>
       <Footer
         pageName="Next book"
         href={`/single-book/${+singleBook.id + 1}`}
