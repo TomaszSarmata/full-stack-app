@@ -7,13 +7,14 @@ export default function handler(req, res) {
       title: "The Hobbit",
       author: "J.R.R. Tolkien",
       imgUrl: "/images/1.png",
-      linkToPurchase: "https://amzn.eu/d/3p7Fo8Q",
+      linkToPurchase: "https://amzn.eu/d/e7GXwuT",
     },
     {
       id: "2",
       title: "The Fellowship of the Ring",
       author: "J.R.R. Tolkien",
       imgUrl: "/images/2.png",
+
       linkToPurchase: "https://amzn.eu/d/3p7Fo8Q",
     },
     {
