@@ -14,7 +14,6 @@ export default function handler(req, res) {
       title: "The Fellowship of the Ring",
       author: "J.R.R. Tolkien",
       imgUrl: "/images/2.png",
-
       linkToPurchase: "https://amzn.eu/d/3p7Fo8Q",
     },
     {
