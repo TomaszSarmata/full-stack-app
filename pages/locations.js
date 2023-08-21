@@ -6,7 +6,7 @@ import Content from "@/components/shared/content";
 export default function BooksPage() {
   return (
     <div className="w-full">
-      <Header name="Books Page"></Header>
+      <Header name="Locations Page"></Header>
 
       <Content>
         <div className="w-full max-w-6xl mx-auto mt-8">
