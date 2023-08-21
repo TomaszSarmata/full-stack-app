@@ -32,7 +32,7 @@ export default function LocationItem({ location }) {
     <div className="border rounded-lg p-4 text-center">
       <img className="rounded-lg" src={location.imgUrl} alt="location image" />
       <p className="text-xl font-medium">{location.title}</p>
-      <p className="text-gray-700">{location.visitedDate}</p>
+      <p className="text-gray-700">Visited Date: {location.visitedDate}</p>
       <div className="flex flex-row space-x-3 justify-center">
         <button
           type="button"
