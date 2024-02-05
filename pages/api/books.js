@@ -1,4 +1,8 @@
+import postgres from "postgres";
+
 export default function handler(req, res) {
+  const sql = postgres(process.env.POSTGRES_CONNECTION_STRING);
+
   const books = [
     {
       id: "1",
