@@ -30,7 +30,7 @@ export default function LocationItem({ location }) {
 
   return (
     <div className="border rounded-lg p-4 text-center">
-      <img className="rounded-lg" src={location.imgUrl} alt="location image" />
+      <img className="rounded-lg" src={location.img_url} alt="location image" />
       <p className="text-xl font-medium">{location.title}</p>
       <p className="text-gray-700">Visited Date: {location.visitedDate}</p>
       <div className="flex flex-row space-x-3 justify-center">
