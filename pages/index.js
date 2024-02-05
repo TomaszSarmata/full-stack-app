@@ -24,6 +24,7 @@ export default function Home() {
       </Content>
 
       <Footer href="/books" pageName="Books Page"></Footer>
+      <Footer href="/locations" pageName="Locations Page"></Footer>
     </div>
   );
 }
