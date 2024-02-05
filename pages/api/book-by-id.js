@@ -18,11 +18,5 @@ export default async function handler(req, res) {
 
   const foundBook = books[0];
 
-  // singleBook = books.find((book) => {
-  //   if (book.id === id) {
-  //     return true;
-  //   }
-  //   return false;
-  // });
   res.json({ book: foundBook });
 }
