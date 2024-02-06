@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+
 export default function BookItem({ book }) {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
@@ -30,7 +31,7 @@ export default function BookItem({ book }) {
 
   return (
     <div className="border rounded-lg p-4 text-center">
-      <Link href={`/single-book/${book.id}`}>
+      <Link href={`/single-book/${book.id}`} className="text-xl font-medium">
         <img className="rounded-lg" src={book.img_url} alt="book image" />
       </Link>
 
