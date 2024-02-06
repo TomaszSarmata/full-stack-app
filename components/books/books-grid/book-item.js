@@ -2,8 +2,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function BookItem({ book }) {
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
+  const [likes, setLikes] = useState(+book.likes);
+  const [dislikes, setDislikes] = useState(+book.dislikes);
+
+  console.log(book);
 
   const pluralLikes = () => {
     if (likes === 1) {
