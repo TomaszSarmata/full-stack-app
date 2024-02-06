@@ -58,9 +58,10 @@ export default function SingleBook() {
         </div>
       </Content>
       <Footer
-        pageName="Next book"
+        pageName="next book"
         href={`/single-book/${+singleBook.id + 1}`}
       ></Footer>
+      <Footer pageName="books page" href="/books"></Footer>
     </div>
   );
 }
