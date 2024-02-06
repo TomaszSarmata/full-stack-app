@@ -31,8 +31,14 @@ export default function BookItem({ book }) {
     setLikes(newLikes);
   };
 
-  const handleDislike = () => {
-    setDislikes(dislikes + 1);
+  const handleDislike = async () => {
+    let newDislikes = dislikes + 1;
+    const id = +book.id;
+    const response = await fetch(
+      `/api/increase-dislikes?id=${id}&dislikes=${newDislikes}`
+    );
+    const data = await response.json();
+    setDislikes(newDislikes);
   };
 
   return (
