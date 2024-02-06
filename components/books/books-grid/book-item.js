@@ -21,8 +21,14 @@ export default function BookItem({ book }) {
     }
   };
 
-  const handleLike = () => {
-    setLikes(likes + 1);
+  const handleLike = async () => {
+    let newLikes = likes + 1;
+    const id = +book.id;
+    const response = await fetch(
+      `/api/increase-likes?id=${id}&likes=${newLikes}`
+    );
+    const data = await response.json();
+    setLikes(newLikes);
   };
 
   const handleDislike = () => {
