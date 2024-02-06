@@ -3,6 +3,7 @@ import sql from "@/utils/postgres";
 export default async function handler(req, res) {
   const id = +req.query.id;
   const likes = +req.query.likes;
+  const dislikes = +req.query.dislikes;
 
   if (id === null || id === undefined) {
     res.status(400).json({ message: "Book id is required" });
