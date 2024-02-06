@@ -5,8 +5,6 @@ export default function BookItem({ book }) {
   const [likes, setLikes] = useState(+book.likes);
   const [dislikes, setDislikes] = useState(+book.dislikes);
 
-  console.log(book);
-
   const pluralLikes = () => {
     if (likes === 1) {
       return "like";
