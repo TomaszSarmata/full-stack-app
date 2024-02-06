@@ -23,22 +23,22 @@ export default function BookItem({ book }) {
 
   const handleLike = async () => {
     let newLikes = likes + 1;
+    setLikes(newLikes);
     const id = +book.id;
     const response = await fetch(
       `/api/increase-likes?id=${id}&likes=${newLikes}`
     );
     const data = await response.json();
-    setLikes(newLikes);
   };
 
   const handleDislike = async () => {
     let newDislikes = dislikes + 1;
+    setDislikes(newDislikes);
     const id = +book.id;
     const response = await fetch(
       `/api/increase-dislikes?id=${id}&dislikes=${newDislikes}`
     );
     const data = await response.json();
-    setDislikes(newDislikes);
   };
 
   return (
