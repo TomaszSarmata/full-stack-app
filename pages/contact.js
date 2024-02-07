@@ -7,6 +7,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [showSuccess, setShowSuccess] = useState("");
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -26,6 +27,8 @@ export default function Contact() {
     setName("");
     setEmail("");
     setMessage("");
+
+    setShowSuccess(data.message);
   };
 
   return (
@@ -66,6 +69,7 @@ export default function Contact() {
             Submit
           </button>
         </form>
+        <div>{showSuccess}</div>
       </Content>
 
       <Footer pageName="Home" href="/"></Footer>

@@ -21,5 +21,5 @@ export default async function handler(req, res) {
   values (${name},${email},${message})
   `;
 
-  res.json({ message: "values updated successfully" });
+  res.json({ message: "Contact details submitted successfully" });
 }
