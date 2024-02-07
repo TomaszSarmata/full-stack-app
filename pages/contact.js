@@ -28,7 +28,6 @@ export default function Contact() {
       const data = await response.json();
 
       setShowSuccess(data.message);
-      console.log("success", data.message);
 
       setName("");
       setEmail("");
@@ -36,7 +35,6 @@ export default function Contact() {
     } else {
       const data = await response.json();
       setShowError(data.message);
-      console.log("error", data.message);
     }
   };
 
