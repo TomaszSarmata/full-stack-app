@@ -7,7 +7,8 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [showSuccess, setShowSuccess] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -22,13 +23,21 @@ export default function Contact() {
     const response = await fetch(
       `api/messages?name=${name}&email=${email}&message=${message}`
     );
-    const data = await response.json();
 
-    setName("");
-    setEmail("");
-    setMessage("");
+    if (response.status === 200) {
+      const data = await response.json();
 
-    setShowSuccess(data.message);
+      setShowSuccess(data.message);
+      console.log("success", data.message);
+
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      const data = await response.json();
+      setShowError(data.message);
+      console.log("error", data.message);
+    }
   };
 
   return (
@@ -68,8 +77,12 @@ export default function Contact() {
           >
             Submit
           </button>
+          {showSuccess ? (
+            <p className="text-green-500 w-96">{showSuccess}</p>
+          ) : (
+            <p className="text-red-500 w-96">{showError}</p>
+          )}
         </form>
-        <div>{showSuccess}</div>
       </Content>
 
       <Footer pageName="Home" href="/"></Footer>
