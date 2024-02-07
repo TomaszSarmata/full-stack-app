@@ -26,6 +26,7 @@ export default function Contact() {
             onChange={() => {}}
           />
           <textarea
+            placeholder="Message"
             name=""
             id=""
             className="bg-gray-200 w-96 py-3 px-6 rounded"
