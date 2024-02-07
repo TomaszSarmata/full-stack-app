@@ -17,6 +17,13 @@ export default function Contact() {
   const handleMessage = (e) => {
     setMessage(e.target.value);
   };
+  const handleSubmit = async () => {
+    const response = await fetch(
+      `api/messages?name=${name}&email=${email}&message=${message}`
+    );
+    const data = response.json();
+    alert("sent data");
+  };
 
   return (
     <div className="w-full">
@@ -50,7 +57,7 @@ export default function Contact() {
           ></textarea>
           <button
             className="bg-blue-500 py-3 px-6 text-white w-96 rounded"
-            onClick={() => {}}
+            onClick={handleSubmit}
             type="button"
           >
             Submit
