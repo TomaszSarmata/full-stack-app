@@ -8,7 +8,38 @@ export default function Contact() {
       <Header name="Contact"></Header>
 
       <Content>
-        <div>Content</div>
+        <form action="" className="flex flex-col space-y-3">
+          <input
+            placeholder="Name"
+            type="text"
+            name="name"
+            className="bg-gray-200 w-96 py-3 px-6 rounded"
+            value=""
+            onChange={() => {}}
+          />
+          <input
+            placeholder="Email"
+            type="text"
+            name="email"
+            className="bg-gray-200 w-96 py-3 px-6 rounded"
+            value=""
+            onChange={() => {}}
+          />
+          <textarea
+            name=""
+            id=""
+            className="bg-gray-200 w-96 py-3 px-6 rounded"
+            value=""
+            onChange={() => {}}
+          ></textarea>
+          <button
+            className="bg-blue-500 py-3 px-6 text-white w-96 rounded"
+            onClick={() => {}}
+            type="button"
+          >
+            Submit
+          </button>
+        </form>
       </Content>
 
       <Footer pageName="Home" href="/"></Footer>
