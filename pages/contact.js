@@ -56,12 +56,12 @@ export default function Contact() {
           <Input
             placeholder="Name"
             value={name}
-            onChange={(value) => setName(value)}
+            formerlyonChange={(anyname) => setName(anyname)}
           ></Input>
           <Input
             placeholder="Email"
             value={email}
-            onChange={(value) => setEmail(value)}
+            formerlyonChange={(IamATemplate) => setEmail(IamATemplate)} //go to input and read the comments to see how the program runs
           ></Input>
 
           <textarea
