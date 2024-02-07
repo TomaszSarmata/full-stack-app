@@ -18,9 +18,9 @@ export default function Contact() {
   // const handleEmail = (e) => {
   //   setEmail(e.target.value);
   // };
-  // const handleMessage = (e) => {
-  //   setMessage(e.target.value);
-  // };
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
+  };
 
   const handleSubmit = async () => {
     const response = await fetch(
@@ -42,7 +42,7 @@ export default function Contact() {
       const data = await response.json();
       setShowError(data.message);
       setTimeout(() => {
-        setError(false);
+        setShowError(false);
       }, 5000);
     }
   };
@@ -56,12 +56,12 @@ export default function Contact() {
           <Input
             placeholder="Name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(value) => setName(value)}
           ></Input>
           <Input
             placeholder="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(value) => setEmail(value)}
           ></Input>
 
           <textarea
