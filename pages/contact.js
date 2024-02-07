@@ -21,8 +21,11 @@ export default function Contact() {
     const response = await fetch(
       `api/messages?name=${name}&email=${email}&message=${message}`
     );
-    const data = response.json();
-    alert("sent data");
+    const data = await response.json();
+
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
