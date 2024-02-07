@@ -1,8 +1,23 @@
 import Header from "@/components/shared/header";
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
+import { useState } from "react";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
+  };
+
   return (
     <div className="w-full">
       <Header name="Contact"></Header>
@@ -14,24 +29,24 @@ export default function Contact() {
             type="text"
             name="name"
             className="bg-gray-200 w-96 py-3 px-6 rounded"
-            value=""
-            onChange={() => {}}
+            value={name}
+            onChange={handleName}
           />
           <input
             placeholder="Email"
             type="text"
             name="email"
             className="bg-gray-200 w-96 py-3 px-6 rounded"
-            value=""
-            onChange={() => {}}
+            value={email}
+            onChange={handleEmail}
           />
           <textarea
             placeholder="Message"
             name=""
             id=""
             className="bg-gray-200 w-96 py-3 px-6 rounded"
-            value=""
-            onChange={() => {}}
+            value={message}
+            onChange={handleMessage}
           ></textarea>
           <button
             className="bg-blue-500 py-3 px-6 text-white w-96 rounded"
