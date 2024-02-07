@@ -1,3 +1,4 @@
+import Input from "@/components/forms/input";
 import Header from "@/components/shared/header";
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
@@ -7,6 +8,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [something, setSomething] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
 
@@ -18,6 +20,10 @@ export default function Contact() {
   };
   const handleMessage = (e) => {
     setMessage(e.target.value);
+  };
+
+  const handleZig = (e) => {
+    setSomething(e.target.value);
   };
   const handleSubmit = async () => {
     const response = await fetch(
@@ -44,6 +50,11 @@ export default function Contact() {
 
       <Content>
         <form action="" className="flex flex-col space-y-3">
+          <Input
+            placeholder="zigziggy"
+            value={something}
+            onChange={handleZig}
+          ></Input>
           <input
             placeholder="Name"
             type="text"
