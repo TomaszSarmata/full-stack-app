@@ -12,19 +12,16 @@ export default function Contact() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
 
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleMessage = (e) => {
-    setMessage(e.target.value);
-  };
+  // const handleName = (e) => {
+  //   setName(e.target.value);
+  // };
+  // const handleEmail = (e) => {
+  //   setEmail(e.target.value);
+  // };
+  // const handleMessage = (e) => {
+  //   setMessage(e.target.value);
+  // };
 
-  const handleZig = (e) => {
-    setSomething(e.target.value);
-  };
   const handleSubmit = async () => {
     const response = await fetch(
       `api/messages?name=${name}&email=${email}&message=${message}`
@@ -38,9 +35,15 @@ export default function Contact() {
       setName("");
       setEmail("");
       setMessage("");
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000);
     } else {
       const data = await response.json();
       setShowError(data.message);
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
     }
   };
 
@@ -49,35 +52,25 @@ export default function Contact() {
       <Header name="Contact"></Header>
 
       <Content>
-        <form action="" className="flex flex-col space-y-3">
+        <form className="flex flex-col space-y-3">
           <Input
-            placeholder="zigziggy"
-            value={something}
-            onChange={handleZig}
-          ></Input>
-          <input
             placeholder="Name"
-            type="text"
-            name="name"
-            className="bg-gray-200 w-96 py-3 px-6 rounded"
             value={name}
-            onChange={handleName}
-          />
-          <input
+            onChange={(e) => setName(e.target.value)}
+          ></Input>
+          <Input
             placeholder="Email"
-            type="text"
-            name="email"
-            className="bg-gray-200 w-96 py-3 px-6 rounded"
             value={email}
-            onChange={handleEmail}
-          />
+            onChange={(e) => setEmail(e.target.value)}
+          ></Input>
+
           <textarea
             placeholder="Message"
             name=""
             id=""
             className="bg-gray-200 w-96 py-3 px-6 rounded"
             value={message}
-            onChange={handleMessage}
+            onChange={(e) => setMessage(e.target.value)}
           ></textarea>
           <button
             className="bg-blue-500 py-3 px-6 text-white w-96 rounded"
@@ -86,6 +79,7 @@ export default function Contact() {
           >
             Submit
           </button>
+          {}
           {showSuccess ? (
             <p className="text-green-500 w-96">{showSuccess}</p>
           ) : (
