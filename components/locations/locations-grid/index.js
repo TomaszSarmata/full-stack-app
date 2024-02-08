@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import LocationItem from "./location-item";
+import LikesProvider from "@/context/likes";
 
 export default function LocationsGrid() {
   const [locations, setLocations] = useState([]);
@@ -15,10 +16,12 @@ export default function LocationsGrid() {
   };
 
   return (
-    <div className="w-full grid grid-cols-3 gap-4 mb-8">
-      {locations.map((location, index) => {
-        return <LocationItem location={location} key={index}></LocationItem>;
-      })}
-    </div>
+    <LikesProvider>
+      <div className="w-full grid grid-cols-3 gap-4 mb-8">
+        {locations.map((location, index) => {
+          return <LocationItem location={location} key={index}></LocationItem>;
+        })}
+      </div>
+    </LikesProvider>
   );
 }
