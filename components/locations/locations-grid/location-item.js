@@ -1,16 +1,17 @@
 import { useState } from "react";
+import LikeButton from "./like-button";
 
 export default function LocationItem({ location }) {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
 
-  const pluralLikes = () => {
-    if (likes === 1) {
-      return "like";
-    } else {
-      return "likes";
-    }
-  };
+  // const pluralLikes = () => {
+  //   if (likes === 1) {
+  //     return "like";
+  //   } else {
+  //     return "likes";
+  //   }
+  // };
 
   const pluralDislikes = () => {
     if (dislikes === 1) {
@@ -34,13 +35,14 @@ export default function LocationItem({ location }) {
       <p className="text-xl font-medium">{location.title}</p>
       <p className="text-gray-700">Visited Date: {location.visitedDate}</p>
       <div className="flex flex-row space-x-3 justify-center">
-        <button
+        {/* <button
           type="button"
           onClick={handleLike}
           className="bg-blue-500 text-white px-3 py-1 rounded-md"
         >
           Like ({likes} {pluralLikes()})
-        </button>
+        </button> */}
+        <LikeButton handleLike={handleLike} likes={likes}></LikeButton>
         <button
           type="button"
           onClick={handleDislike}
