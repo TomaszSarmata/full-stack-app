@@ -17,7 +17,7 @@ export default function Contact() {
 
   useEffect(() => {
     getMessages();
-  }, []);
+  }, [messages]);
 
   const getMessages = async () => {
     const response = await fetch(`api/get-messages`);
