@@ -23,6 +23,19 @@ export default function Contact() {
   };
 
   const handleSubmit = async () => {
+    // if (!name) {
+    //   //message here
+    //   return;
+    // }
+    // if (!email) {
+    //   //message here
+    //   return;
+    // }
+    // if (!message) {
+    //   //message here
+    //   return;
+    // }
+
     const response = await fetch(
       `api/contact?name=${name}&email=${email}&message=${message}`
     );
