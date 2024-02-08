@@ -1,3 +1,5 @@
+import NumberOfLikes from "./number-of-likes";
+
 export default function LikeButton({ previouslyhandleLike, likes }) {
   // const handleLike = () => {
   //   setLikes(likes + 1);
@@ -15,7 +17,7 @@ export default function LikeButton({ previouslyhandleLike, likes }) {
       onClick={previouslyhandleLike}
       className="bg-blue-500 text-white px-3 py-1 rounded-md"
     >
-      Like ({likes} {pluralLikes()})
+      Like <NumberOfLikes likes={likes}></NumberOfLikes> {pluralLikes()}
     </button>
   );
 }
