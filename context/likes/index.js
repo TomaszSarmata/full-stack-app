@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { useState } from "react";
 
 const INITIAL_STATE = {
@@ -30,6 +30,8 @@ export default function LikesProvider({ children }) {
     <LikesContext.Provider value={value}>{children}</LikesContext.Provider> //every function in react has to return valid jsx, inside we are passing the property that we can call however we want and assigning it the value of our object.
   );
 
+  //here we are going to create our custome hook
+
   // const pluralDislikes = () => {
   //   if (dislikes === 1) {
   //     return "dislike";
@@ -37,4 +39,9 @@ export default function LikesProvider({ children }) {
   //     return "dislikes";
   //   }
   // };
+}
+
+export function useLikes() {
+  const context = useContext(LikesContext);
+  return context;
 }
