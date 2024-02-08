@@ -24,7 +24,7 @@ export default function Contact() {
 
   const handleSubmit = async () => {
     const response = await fetch(
-      `api/messages?name=${name}&email=${email}&message=${message}`
+      `api/contact?name=${name}&email=${email}&message=${message}`
     );
 
     if (response.status === 200) {
