@@ -14,15 +14,18 @@ export default function Contact() {
   const [showError, setShowError] = useState(false);
   const [modal, setModal] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getMessages();
   }, []);
 
   const getMessages = async () => {
+    setIsLoading(true);
     const response = await fetch(`api/get-messages`);
     const data = await response.json();
     setMessages(data);
+    setIsLoading(false);
   };
 
   // const handleName = (e) => {
@@ -125,17 +128,21 @@ export default function Contact() {
           </div>
         ) : null}
 
-        <div className="grid grid-cols-3  gap-6 w-4/5 px-2 mx-auto">
-          {messages.map((message, index) => {
-            return (
-              <div key={index} className="bg-blue-100 py-4 px-8 rounded-lg">
-                <p>{message.name}</p>
-                <p>{message.email}</p>
-                <p>{message.message}</p>
-              </div>
-            );
-          })}
-        </div>
+        {isLoading ? (
+          <div>Loading messages...</div>
+        ) : (
+          <div className="grid grid-cols-3  gap-6 w-4/5 px-2 mx-auto">
+            {messages.map((message, index) => {
+              return (
+                <div key={index} className="bg-blue-100 py-4 px-8 rounded-lg">
+                  <p>{message.name}</p>
+                  <p>{message.email}</p>
+                  <p>{message.message}</p>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </Content>
 
       <Footer pageName="Home" href="/"></Footer>
