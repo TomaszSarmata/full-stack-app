@@ -7,3 +7,5 @@ const INITIAL_STATE = {
 };
 
 export const LikesContext = createContext(INITIAL_STATE); //created a context and passed it initial state
+
+export default function LikesProvider({}) {}
