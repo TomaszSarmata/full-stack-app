@@ -30,8 +30,6 @@ export default function LikesProvider({ children }) {
     <LikesContext.Provider value={value}>{children}</LikesContext.Provider> //every function in react has to return valid jsx, inside we are passing the property that we can call however we want and assigning it the value of our object.
   );
 
-  //here we are going to create our custome hook
-
   // const pluralDislikes = () => {
   //   if (dislikes === 1) {
   //     return "dislike";
@@ -41,6 +39,7 @@ export default function LikesProvider({ children }) {
   // };
 }
 
+//here we are going to create our custome hook that will return the value of our context in order to replace useState hook
 export function useLikes() {
   const context = useContext(LikesContext);
   return context;
