@@ -3,6 +3,7 @@ import Header from "@/components/shared/header";
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -12,6 +13,18 @@ export default function Contact() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const [modal, setModal] = useState(false);
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    getMessages();
+  }, []);
+
+  const getMessages = async () => {
+    const response = await fetch(`api/get-messages`);
+    const data = await response.json();
+    setMessages(data);
+    console.log(data);
+  };
 
   // const handleName = (e) => {
   //   setName(e.target.value);
@@ -68,7 +81,7 @@ export default function Contact() {
       <Header name="Contact"></Header>
 
       <Content>
-        <form className="flex flex-col space-y-3">
+        <form className="flex flex-col space-y-3 items-center mb-10">
           <Input
             placeholder="Name"
             value={name}
@@ -111,6 +124,18 @@ export default function Contact() {
             </p>
           </div>
         ) : null}
+
+        <div className="grid grid-cols-3  gap-6 w-4/5 px-2 mx-auto">
+          {messages.map((message, index) => {
+            return (
+              <div key={index} className="bg-blue-100 py-4 px-8 rounded-lg">
+                <p>{message.name}</p>
+                <p>{message.email}</p>
+                <p>{message.message}</p>
+              </div>
+            );
+          })}
+        </div>
       </Content>
 
       <Footer pageName="Home" href="/"></Footer>
