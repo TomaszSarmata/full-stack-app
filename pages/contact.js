@@ -8,9 +8,10 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [something, setSomething] = useState("");
+  // const [something, setSomething] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [modal, setModal] = useState(false);
 
   // const handleName = (e) => {
   //   setName(e.target.value);
@@ -48,8 +49,10 @@ export default function Contact() {
       setName("");
       setEmail("");
       setMessage("");
+      setModal(true);
       setTimeout(() => {
         setShowSuccess(false);
+        setModal(false);
       }, 5000);
     } else {
       const data = await response.json();
@@ -92,13 +95,22 @@ export default function Contact() {
           >
             Submit
           </button>
-          {}
+
           {showSuccess ? (
             <p className="text-green-500 w-96">{showSuccess}</p>
           ) : (
             <p className="text-red-500 w-96">{showError}</p>
           )}
         </form>
+        {modal ? (
+          <div className="w-96 text-gray-700 bg-gray-200 py-10 px-16">
+            <p className="text-xl font-semibold">Great Stuff!</p>
+            <p className="italic">
+              Your message was successully passed on to one of our team members
+              and will be delt with imminently.
+            </p>
+          </div>
+        ) : null}
       </Content>
 
       <Footer pageName="Home" href="/"></Footer>
