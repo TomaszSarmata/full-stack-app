@@ -1,10 +1,10 @@
 import { useState } from "react";
 import LikeButton from "./like-button";
-import { useLikes } from "@/context/likes";
+// import { useLikes } from "@/context/likes";
 
 export default function LocationItem({ location }) {
   const [dislikes, setDislikes] = useState(0);
-  const { likes, handleLike } = useLikes();
+  // const { likes, handleLike } = useLikes();
 
   // const pluralLikes = () => {
   //   if (likes === 1) {
@@ -44,8 +44,8 @@ export default function LocationItem({ location }) {
           Like ({likes} {pluralLikes()})
         </button> */}
         <LikeButton
-          previouslyhandleLike={handleLike}
-          likes={likes}
+        // previouslyhandleLike={handleLike}
+        // likes={likes}
         ></LikeButton>
         <button
           type="button"
