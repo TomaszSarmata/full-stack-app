@@ -23,7 +23,6 @@ export default function Contact() {
     const response = await fetch(`api/get-messages`);
     const data = await response.json();
     setMessages(data);
-    console.log(data);
   };
 
   // const handleName = (e) => {
@@ -66,6 +65,7 @@ export default function Contact() {
       setTimeout(() => {
         setShowSuccess(false);
         setModal(false);
+        getMessages();
       }, 5000);
     } else {
       const data = await response.json();
