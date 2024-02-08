@@ -6,4 +6,4 @@ const INITIAL_STATE = {
   handleLike: () => {},
 };
 
-const LikesContext = createContext(INITIAL_STATE); //created a context and passed it initial state
+export const LikesContext = createContext(INITIAL_STATE); //created a context and passed it initial state
