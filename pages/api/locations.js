@@ -1,28 +1,13 @@
 import sql from "@/utils/postgres";
 
 export default async function handler(req, res) {
-  const locations = await sql`
+  try {
+    const locations = await sql`
     select * from locations
   `;
-  // const locations = [
-  //   {
-  //     id: "manchester",
-  //     title: "Manchester",
-  //     visitedDate: "last week",
-  //     imgUrl: "/images/manchester.png",
-  //   },
-  //   {
-  //     id: "singapore",
-  //     title: "Singapore",
-  //     visitedDate: "last year",
-  //     imgUrl: "/images/singapore.png",
-  //   },
-  //   {
-  //     id: "san-francisco",
-  //     title: "San Francisco",
-  //     visitedDate: "Jan 2022",
-  //     imgUrl: "/images/san-francisco.png",
-  //   },
-  // ];
-  res.json(locations);
+    res.json(locations);
+  } catch (error) {
+    console.error("Failed to fetch locations:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 }
