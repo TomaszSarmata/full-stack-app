@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const INITIAL_STATE = {
   //declared inital state to save on maintanance (in case you had to use likes in many places => write INITIAL_STATE.likes)
-  likes: 0,
+  likesByLocation: {},
   handleLike: () => {},
 };
 
@@ -13,17 +13,21 @@ export default function LikesProvider({ children }) {
   //provider provides context to our components
   //here we are going to implement our logic for maintaining the value of likes
 
-  const [likes, setLikes] = useState(INITIAL_STATE.likes);
+  const [likesByLocation, setLikesByLocation] = useState(
+    INITIAL_STATE.likesByLocation
+  );
 
-  const handleLike = () => {
-    setLikes(likes + 1);
+  const handleLike = (locationId) => {
+    const currentLikes = likesByLocation[locationId] || 0;
+
+    setLikesByLocation({ ...likesByLocation, [locationId]: currentLikes + 1 });
   };
 
   //here we are going to return the values of likes and handleLike and bundle it up in an object for convenience
 
   const value = {
-    likes: likes,
-    handleLike: handleLike,
+    likesByLocation,
+    handleLike,
   };
 
   return (
