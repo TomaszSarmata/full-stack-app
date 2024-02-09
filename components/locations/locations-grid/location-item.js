@@ -44,8 +44,9 @@ export default function LocationItem({ location }) {
           Like ({likes} {pluralLikes()})
         </button> */}
         <LikeButton
-        // previouslyhandleLike={handleLike}
-        // likes={likes}
+          // previouslyhandleLike={handleLike}
+          // likes={likes}
+          location={location}
         ></LikeButton>
         <button
           type="button"
