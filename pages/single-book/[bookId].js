@@ -10,11 +10,34 @@ export default function SingleBook() {
   const [singleBook, setSingleBook] = useState(null);
   const router = useRouter();
   const { bookId } = router.query;
+  const [bookIds, setBookIds] = useState([]);
+
+  useEffect(() => {
+    const fetchIds = async () => {
+      try {
+        const response = await fetch(`/api/books`);
+        const data = await response.json();
+        const listOfIds = data.map((book) => book.id);
+        setBookIds(listOfIds);
+      } catch (error) {
+        console.error("failed to fetch:", error);
+      }
+    };
+    fetchIds();
+  }, []);
 
   useEffect(() => {
     if (!bookId) return;
     getSingleBook(bookId);
-  }, [bookId]);
+  }, [bookId, bookIds]);
+
+  const getNextBookId = () => {
+    const currentId = Number(bookId);
+    const index = bookIds.indexOf(currentId);
+    return index >= 0 && index < bookIds.length - 1
+      ? bookIds[index + 1]
+      : bookIds[0];
+  };
 
   const getSingleBook = async (id) => {
     const res = await fetch(`/api/book-by-id?id=${id}`);
@@ -22,8 +45,6 @@ export default function SingleBook() {
     const { book } = data;
     setSingleBook(book);
   };
-
-  console.log(singleBook);
 
   if (!singleBook) {
     return <div>loading...</div>;
@@ -59,7 +80,7 @@ export default function SingleBook() {
       </Content>
       <Footer
         pageName="next book"
-        href={`/single-book/${+singleBook.id + 1}`}
+        href={`/single-book/${getNextBookId()}`}
       ></Footer>
       <Footer pageName="books page" href="/books"></Footer>
     </div>
