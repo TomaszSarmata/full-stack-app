@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     select * from contact_messages
     order by created_at desc
   `;
-    res.json(messages);
+    res.json({ messages: messages });
   } catch (error) {
     console.error("Failed to fetch messages:", error);
     res.status(500).json({ error: "Internal Server Error" });
