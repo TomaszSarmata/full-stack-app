@@ -97,11 +97,7 @@ export default function Contact() {
           )}
         </form>
 
-        {isLoading ? (
-          <div>Loading messages...</div>
-        ) : (
-          <ListOfMessages></ListOfMessages>
-        )}
+        <ListOfMessages></ListOfMessages>
       </Content>
 
       <Footer pageName="Home" href="/"></Footer>
