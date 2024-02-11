@@ -20,10 +20,10 @@ export default function ListOfMessages() {
   };
 
   return isLoading ? (
-    <div className="grid grid-cols-3 px-10 gap-4">
-      <LoadingMessages></LoadingMessages>
-      <LoadingMessages></LoadingMessages>
-      <LoadingMessages></LoadingMessages>
+    <div className="grid grid-cols-3  gap-6 w-4/5 px-2 mx-auto">
+      <div className="bg-gray-200 py-4 px-8 rounded-lg h-28 animate-pulse"></div>
+      <div className="bg-gray-200 py-4 px-8 rounded-lg h-28 animate-pulse"></div>
+      <div className="bg-gray-200 py-4 px-8 rounded-lg h-28 animate-pulse"></div>
     </div>
   ) : (
     <div className="grid grid-cols-3  gap-6 w-4/5 px-2 mx-auto">
