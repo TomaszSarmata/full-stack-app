@@ -2,8 +2,8 @@ import Input from "@/components/forms/input";
 import Header from "@/components/shared/header";
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+
 import ListOfMessages from "@/components/contact/list-of-messages";
 
 export default function Contact() {
@@ -13,7 +13,21 @@ export default function Contact() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const [modal, setModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getMessages();
+  }, []);
+
+  const getMessages = async () => {
+    setIsLoading(true);
+    const response = await fetch(`/api/get-messages`);
+    const data = await response.json();
+    const { messages } = data;
+    setMessages(messages);
+    setIsLoading(false);
+  };
 
   const handleMessage = (e) => {
     setMessage(e.target.value);
@@ -49,7 +63,7 @@ export default function Contact() {
       setTimeout(() => {
         setShowSuccess(false);
         setModal(false);
-        // getMessages();
+        getMessages();
       }, 5000);
     } else {
       const data = await response.json();
@@ -97,7 +111,10 @@ export default function Contact() {
           )}
         </form>
 
-        <ListOfMessages></ListOfMessages>
+        <ListOfMessages
+          messages={messages}
+          isLoading={isLoading}
+        ></ListOfMessages>
       </Content>
 
       <Footer pageName="Home" href="/"></Footer>
