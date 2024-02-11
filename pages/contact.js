@@ -80,7 +80,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
       <Header name="Contact"></Header>
 
       <Content>
@@ -138,7 +138,7 @@ export default function Contact() {
 
       <Footer pageName="Home" href="/"></Footer>
       {modal ? (
-        <div className="w-full h-full bg-white bg-opacity-50">
+        <div className="w-full h-screen bg-white bg-opacity-50 absolute top-0 left-0 flex items-center justify-center">
           <div className="w-96 text-gray-700 bg-gray-200 py-10 px-16">
             <p className="text-xl font-semibold">Great Stuff!</p>
             <p className="italic">
