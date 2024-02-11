@@ -73,9 +73,9 @@ export default function Contact() {
     } else {
       const data = await response.json();
       setShowError(data.message);
-      setTimeout(() => {
-        setShowError(false);
-      }, 5000);
+      // setTimeout(() => {
+      //   setShowError(false);
+      // }, 5000);
     }
   };
 
