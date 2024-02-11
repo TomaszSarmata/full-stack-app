@@ -39,6 +39,12 @@ export default function SingleBook() {
       : bookIds[0];
   };
 
+  const getPreviousBookId = () => {
+    const currentId = Number(bookId);
+    const index = bookIds.indexOf(currentId);
+    return index > 0 ? bookIds[index - 1] : bookIds[2];
+  };
+
   const getSingleBook = async (id) => {
     const res = await fetch(`/api/book-by-id?id=${id}`);
     const data = await res.json();
@@ -78,11 +84,17 @@ export default function SingleBook() {
           </div>
         </div>
       </Content>
-      <Footer
-        pageName="next book"
-        href={`/single-book/${getNextBookId()}`}
-      ></Footer>
-      <Footer pageName="books page" href="/books"></Footer>
+      <div className="flex justify-start bg-gray-300 pb-8 gap-2 w-1/2 ml-2">
+        <Footer
+          pageName="next book"
+          href={`/single-book/${getNextBookId()}`}
+        ></Footer>
+        <Footer
+          pageName="previous book"
+          href={`/single-book/${getPreviousBookId()}`}
+        ></Footer>
+        <Footer pageName="books page" href="/books"></Footer>
+      </div>
     </div>
   );
 }
