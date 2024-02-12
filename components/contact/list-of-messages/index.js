@@ -10,7 +10,7 @@ export default function ListOfMessages({ messages, isLoading }) {
   ) : (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-0 sm:px-6 mx-auto">
       {messages.map((message, index) => (
-        <div key={index} className="bg-blue-100 py-4 px-8 rounded-lg">
+        <div key={index} className="bg-blue-100 py-4 px-8 rounded-lg shadow">
           <p className="font-medium text-xl border-b-2 border-gray-400 border-opacity-40">
             {message.name}
           </p>
