@@ -73,7 +73,7 @@ export default function Contact() {
 
   return (
     <div className="w-full relative">
-      <Header name="Contact"></Header>
+      <Header name="Contact Page"></Header>
 
       <Content>
         <form className="flex flex-col space-y-3 items-center mb-10">
