@@ -76,7 +76,7 @@ export default function Contact() {
       <Header name="Contact Page"></Header>
 
       <Content>
-        <form className="flex flex-col space-y-3 items-center mb-10">
+        <form className="flex flex-col space-y-3 items-center mb-10 w-full sm:w-96 mx-auto">
           <Input
             placeholder="Name"
             value={name}
@@ -92,12 +92,12 @@ export default function Contact() {
             placeholder="Message"
             name=""
             id=""
-            className="bg-gray-200 w-96 py-3 px-6 rounded"
+            className="bg-gray-200 w-full py-3 px-6 rounded"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
           <button
-            className="bg-blue-500 py-3 px-6 text-white w-96 rounded"
+            className="bg-blue-500 py-3 px-6 text-white w-full rounded"
             onClick={handleSubmit}
             type="button"
           >
@@ -105,9 +105,9 @@ export default function Contact() {
           </button>
 
           {showSuccess ? (
-            <p className="text-green-500 w-96">{showSuccess}</p>
+            <p className="text-green-500 w-full">{showSuccess}</p>
           ) : (
-            <p className="text-red-500 w-96">{showError}</p>
+            <p className="text-red-500 w-full">{showError}</p>
           )}
         </form>
 
