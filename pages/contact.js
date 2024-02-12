@@ -119,9 +119,11 @@ export default function Contact() {
 
       <Footer pageName="Home" href="/"></Footer>
       {modal ? (
-        <div className="w-full h-screen bg-white bg-opacity-50 absolute top-0 left-0 flex items-center justify-center">
-          <div className="w-96 text-gray-700 bg-gray-200 py-10 px-16">
-            <p className="text-xl font-semibold">Great Stuff!</p>
+        <div className="w-full h-screen bg-white bg-opacity-80 absolute top-0 left-0 flex items-center justify-center">
+          <div className="w-96 text-gray-700 bg-gray-300 py-10 px-16 rounded-lg shadow-md">
+            <p className="text-xl font-semibold border-b-red-300 border-b-2">
+              Great Stuff!
+            </p>
             <p className="italic">
               Your message was successully passed on to one of our team members
               and will be delt with imminently.
