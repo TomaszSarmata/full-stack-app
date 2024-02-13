@@ -65,7 +65,7 @@ export default function SingleBook() {
         subtitle={singleBook.author}
       ></Hero>
       <Content>
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col px-2">
           <div className=" w-1/6 bg-blue-500 hover:bg-blue-700 py-1 px-3 rounded-md text-white text-center">
             <a href={singleBook.link_to_purchase} target="_blank">
               Buy on Amazon
@@ -76,7 +76,7 @@ export default function SingleBook() {
             <CopyToClipboard text={singleBook.link_to_purchase}>
               <button
                 type="button"
-                className="bg-blue-500 hover:bg-blue-700 active:bg-red-100 w-1/6 mt-2 py-1 px-3 rounded-md text-white"
+                className="text-xs bg-gray-500 hover:bg-blue-700 active:bg-red-100 w-1/6 mt-2 py-1 px-2 rounded-md text-white"
               >
                 Copy link to Amazon
               </button>
@@ -84,7 +84,7 @@ export default function SingleBook() {
           </div>
         </div>
       </Content>
-      <div className="flex justify-start bg-gray-300 pb-8 gap-2 w-1/2 ml-2">
+      <div className="flex flex-col md:flex-row justify-start bg-gray-300 pb-8 gap-2 w-1/2 md:w-2/3 ml-2">
         <Footer
           pageName="previous book"
           href={`/single-book/${getPreviousBookId()}`}

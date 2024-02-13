@@ -1,6 +1,6 @@
 export default function Hero({ imgUrl, title, subtitle }) {
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto px-2">
       <div className="w-full flex flex-col  items-center py-4 space-y-4 md:flex-row md:space-x-4">
         <div className="w-48 shadow-md rounded-lg">
           {" "}
