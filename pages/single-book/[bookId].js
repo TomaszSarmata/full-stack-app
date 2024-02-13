@@ -86,12 +86,12 @@ export default function SingleBook() {
       </Content>
       <div className="flex justify-start bg-gray-300 pb-8 gap-2 w-1/2 ml-2">
         <Footer
-          pageName="next book"
-          href={`/single-book/${getNextBookId()}`}
-        ></Footer>
-        <Footer
           pageName="previous book"
           href={`/single-book/${getPreviousBookId()}`}
+        ></Footer>
+        <Footer
+          pageName="next book"
+          href={`/single-book/${getNextBookId()}`}
         ></Footer>
         <Footer pageName="books page" href="/books"></Footer>
       </div>
