@@ -1,9 +1,9 @@
 import sql from "@/utils/postgres";
 
 export default async function handler(req, res) {
-  const name = req.query.name;
-  const email = req.query.email;
-  const message = req.query.message;
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = req.body.message;
 
   if (name === null || name === undefined || name === "") {
     res.status(400).json({ message: "Plese provide the name" });
