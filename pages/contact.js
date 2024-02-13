@@ -34,22 +34,23 @@ export default function Contact() {
   };
 
   const handleSubmit = async () => {
-    // if (!name) {
-    //   //message here
-    //   return;
-    // }
-    // if (!email) {
-    //   //message here
-    //   return;
-    // }
-    // if (!message) {
-    //   //message here
-    //   return;
-    // }
+    let payload = {
+      name: name,
+      email: email,
+      message: message,
+    };
 
-    const response = await fetch(
-      `api/contact?name=${name}&email=${email}&message=${message}`
-    );
+    const response = await fetch(`api/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    // const response = await fetch(
+    //   `api/contact?name=${name}&email=${email}&message=${message}`
+    // );
 
     if (response.status === 200) {
       const data = await response.json();
