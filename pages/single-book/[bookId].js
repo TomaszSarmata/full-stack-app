@@ -84,7 +84,7 @@ export default function SingleBook() {
           </div>
         </div>
       </Content>
-      <div className="flex flex-col md:flex-row justify-start bg-gray-300 pb-8 gap-2 w-1/2 md:w-2/3 ml-2">
+      <div className="flex flex-col md:flex-row justify-start gap-2 w-1/2 md:w-2/3 ml-2">
         <Footer
           pageName="previous book"
           href={`/single-book/${getPreviousBookId()}`}
