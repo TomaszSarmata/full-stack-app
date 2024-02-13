@@ -54,6 +54,7 @@ export default function Contact() {
 
     if (response.status === 200) {
       const data = await response.json();
+      setShowError(false);
 
       setShowSuccess(data.message);
 
