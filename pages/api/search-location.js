@@ -2,6 +2,7 @@ import sql from "@/utils/postgres";
 
 export default async function handler(req, res) {
   const input = req.query.inputValue;
+  console.log(input, "input here");
 
   try {
     const pattern = input + "%";
@@ -11,7 +12,7 @@ export default async function handler(req, res) {
     `;
     res.status(200).json(location);
   } catch (error) {
-    console.error(error, "failed to fetch the location");
-    res.status(5000).json({ message: "internal server error" });
+    console.error("failed to fetch the location", error.message || error);
+    res.status(500).json({ message: "internal server error" });
   }
 }
