@@ -3,6 +3,7 @@ import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import Input from "@/components/forms/input";
 import { useEffect, useState } from "react";
+import LocationItem from "@/components/search/location-item";
 
 export default function Search() {
   const [locations, setLocations] = useState([]);
@@ -51,23 +52,7 @@ export default function Search() {
         </div>
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
           {locations.map((location) => (
-            <div
-              key={location.id}
-              className="w-full h-full relative text-center text-white"
-            >
-              <img
-                src={location.img_url}
-                alt="location"
-                className="brightness-50 rounded-md shadow-md"
-              />
-              <p className="w-full text-3xl bold text-shadow small-screen-text absolute top-1/2 left-1/2 translate-x-[-50%]">
-                {location.title}
-              </p>
-              <p className="w-full text-sm bold text-shadow absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[180%]">
-                <span>visited date: </span>
-                {location.visited_date}
-              </p>
-            </div>
+            <LocationItem location={location}></LocationItem>
           ))}
         </div>
       </Content>
