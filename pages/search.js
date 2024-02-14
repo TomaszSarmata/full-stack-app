@@ -10,7 +10,12 @@ export default function Search() {
   }, []);
 
   const getLocations = async () => {
-    const response = await fetch(`/api/locations`);
+    const response = await fetch(`/api/locations`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     setLocations(data);
   };
