@@ -3,6 +3,7 @@ import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import Input from "@/components/forms/input";
 import { useEffect, useState } from "react";
+
 export default function Search() {
   const [locations, setLocations] = useState([]);
   useEffect(() => {
