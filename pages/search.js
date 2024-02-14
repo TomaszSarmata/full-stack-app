@@ -30,12 +30,16 @@ export default function Search() {
         </div>
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
           {locations.map((location) => (
-            <div className="w-full h-full relative text-white">
-              <img src={location.img_url} alt="location" />
-              <p className="text-2xl bold absolute top-1/2 left-1/2 translate-x-[-50%]">
+            <div className="w-full h-full relative text-center text-white">
+              <img
+                src={location.img_url}
+                alt="location"
+                className="brightness-50"
+              />
+              <p className="w-full text-3xl bold text-shadow absolute top-1/2 left-1/2 translate-x-[-50%] ">
                 {location.title}
               </p>
-              <p className="text-xl bold absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[90%]">
+              <p className="w-full text-xl bold text-shadow absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[120%]">
                 {location.visited_date}
               </p>
             </div>
