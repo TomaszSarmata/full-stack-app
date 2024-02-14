@@ -1,10 +1,7 @@
 export default function LocationItem({ location }) {
   console.log(location, "here location");
   return (
-    <div
-      key={location.id}
-      className="w-full h-full relative text-center text-white"
-    >
+    <div className="w-full h-full relative text-center text-white">
       <img
         src={location.img_url}
         alt="location"
