@@ -36,7 +36,10 @@ export default function Search() {
         </div>
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
           {locations.map((location) => (
-            <div className="w-full h-full relative text-center text-white">
+            <div
+              key={location.id}
+              className="w-full h-full relative text-center text-white"
+            >
               <img
                 src={location.img_url}
                 alt="location"
