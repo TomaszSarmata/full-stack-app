@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function Search() {
   const [locations, setLocations] = useState([]);
+  const [inputValue, setInputValue] = useState("");
   useEffect(() => {
     getLocations();
   }, []);
@@ -26,7 +27,12 @@ export default function Search() {
       <Header name="Search Page"></Header>
       <Content>
         <div className="w-full sm:w-8/12 md:w-6/12 lg:w-4/12 flex flex-row space-x-2">
-          <Input></Input>
+          <Input
+            value={inputValue}
+            formerlyonChange={(valueFromTheComponent) =>
+              setInputValue(valueFromTheComponent)
+            }
+          ></Input>
           <button
             className="bg-blue-500 text-white px-6 py-2 rounded"
             type="button"
