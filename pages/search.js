@@ -24,9 +24,7 @@ export default function Search() {
   };
 
   const handleSubmit = async () => {
-    const response = await fetch(
-      `/api/search-location?inputValue=${inputValue}`
-    );
+    const response = await fetch(`/api/locations?inputValue=${inputValue}`);
     const data = await response.json();
     setLocations(data);
   };
