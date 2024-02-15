@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     }
   } else {
     try {
-      const pattern = input + "%";
+      const pattern = "%" + input + "%";
       locations = await sql`
         select * from locations
         where title ilike ${pattern}
