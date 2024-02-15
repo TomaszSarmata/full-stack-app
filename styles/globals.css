@@ -10,7 +10,7 @@
   .small-screen-text {
     font-size: 24px;
   }
-  .girid-mobile-sm {
+  .grid-mobile-sm {
     grid-template-columns: 1fr;
   }
 }

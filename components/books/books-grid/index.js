@@ -22,7 +22,7 @@ export default function BooksGrid() {
       {isLoading ? (
         <div>Loading books...</div>
       ) : (
-        <div className="w-full grid grid-cols-3 gap-4 mb-8">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-mobile-sm gap-4 mt-10">
           {books.map((book, index) => {
             return <BookItem book={book} key={index}></BookItem>;
           })}
