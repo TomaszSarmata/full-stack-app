@@ -66,17 +66,17 @@ export default function SingleBook() {
       ></Hero>
       <Content>
         <div className="w-full flex flex-col px-2">
-          <div className=" w-1/6 bg-blue-500 hover:bg-blue-700 py-1 px-3 rounded-md text-white text-center">
+          <div className=" w-1/3 sm:w-2/6 md:w-3/12 lg:w-2/12 bg-blue-500 hover:bg-blue-700 py-1 px-3 rounded-md text-white text-center">
             <a href={singleBook.link_to_purchase} target="_blank">
               Buy on Amazon
             </a>
           </div>
 
-          <div>
+          <div className="w-1/3 sm:w-2/6 md:w-3/12 lg:w-2/12">
             <CopyToClipboard text={singleBook.link_to_purchase}>
               <button
                 type="button"
-                className="text-xs bg-gray-500 hover:bg-blue-700 active:bg-red-100 w-1/6 mt-2 py-1 px-2 rounded-md text-white"
+                className="w-full text-xs bg-gray-500 hover:bg-blue-700 active:bg-red-100  mt-2 py-1 px-2 rounded-md text-white"
               >
                 Copy link to Amazon
               </button>
