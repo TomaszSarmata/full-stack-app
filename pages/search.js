@@ -23,7 +23,7 @@ export default function Search() {
     setLocations(data);
   };
 
-  const handleSubmit = async () => {
+  const getFilteredLocations = async () => {
     const response = await fetch(`/api/locations?inputValue=${inputValue}`);
     const data = await response.json();
     setLocations(data);
@@ -43,7 +43,7 @@ export default function Search() {
           <button
             className="bg-blue-500 text-white px-6 py-2 rounded"
             type="button"
-            onClick={handleSubmit}
+            onClick={getFilteredLocations}
           >
             S
           </button>
