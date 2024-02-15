@@ -5,12 +5,12 @@ export default function LocationItem({ location }) {
       <img
         src={location.img_url}
         alt="location"
-        className="brightness-50 rounded-md shadow-md"
+        className="brightness-75 rounded-md shadow-md w-full h-full"
       />
-      <p className="w-full text-3xl bold text-shadow small-screen-text absolute top-1/2 left-1/2 translate-x-[-50%]">
+      <p className="w-full text-3xl font-bold text-shadow small-screen-text absolute top-1/2 left-1/2 translate-x-[-50%]">
         {location.title}
       </p>
-      <p className="w-full text-sm bold text-shadow absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[180%]">
+      <p className="w-full text-sm text-shadow absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[180%]">
         <span>visited date: </span>
         {location.visited_date}
       </p>
