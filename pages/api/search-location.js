@@ -5,7 +5,6 @@ export default async function handler(req, res) {
   //   let input = "san francisco";
   // let formattedInput = input.split(' ').map(word => word[0].toUpperCase() + word.substring(1)).join(' ');
   let input = req.query.inputValue;
-  console.log(input, "input here");
 
   try {
     const pattern = input + "%";
