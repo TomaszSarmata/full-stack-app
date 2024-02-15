@@ -34,7 +34,7 @@ export default function LocationItem({ location }) {
     <div className="border rounded-lg p-4 text-center">
       <img className="rounded-lg" src={location.img_url} alt="location image" />
       <p className="text-xl font-medium">{location.title}</p>
-      <p className="text-gray-700">Visited Date: {location.visitedDate}</p>
+      <p className="text-gray-700">Visited Date: {location.visited_date}</p>
       <div className="flex flex-row space-x-3 justify-center">
         {/* <button
           type="button"
@@ -51,7 +51,7 @@ export default function LocationItem({ location }) {
         <button
           type="button"
           onClick={handleDislike}
-          className="bg-red-500 text-white px-3 py-1 rounded-md"
+          className="bg-red-500 text-white px-3 py-1 rounded-md text-sm"
         >
           Dislike ({dislikes} {pluralDislikes()})
         </button>

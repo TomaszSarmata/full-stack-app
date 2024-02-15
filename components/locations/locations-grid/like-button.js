@@ -21,7 +21,7 @@ export default function LikeButton({ location }) {
       onClick={() => {
         handleLike(location.id);
       }}
-      className="bg-blue-500 text-white px-3 py-1 rounded-md"
+      className="bg-blue-500 text-white text-sm px-3 py-1 rounded-md"
     >
       Like (<NumberOfLikes locationId={location.id}></NumberOfLikes>{" "}
       {pluralLikes()})

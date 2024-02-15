@@ -23,7 +23,7 @@ export default function LocationsGrid() {
       {isLoading ? (
         <div>Loading locations...</div>
       ) : (
-        <div className="w-full grid grid-cols-3 gap-4 mb-8">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 girid-mobile-sm gap-4 mt-10">
           {locations.map((location, index) => {
             return (
               <LocationItem location={location} key={index}></LocationItem>
