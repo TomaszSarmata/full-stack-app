@@ -24,6 +24,10 @@ export default function Search() {
   };
 
   const getFilteredLocations = async () => {
+    if (!inputValue) {
+      getLocations();
+      return;
+    }
     const response = await fetch(`/api/locations?inputValue=${inputValue}`);
     const data = await response.json();
     setLocations(data);
