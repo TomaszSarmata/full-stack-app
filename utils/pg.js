@@ -4,4 +4,12 @@ const pg = new Client({
 });
 pg.connect();
 
-export default pg;
+export default {
+  ...args,
+  execute: async (query, ...args) => {
+    const response = await pg.query(query, ...args);
+    console.log(response);
+    const rows = response.rows;
+    return rows;
+  },
+};
