@@ -5,7 +5,7 @@ const pg = new Client({
 pg.connect();
 
 export default {
-  ...args,
+  ...pg,
   execute: async (query, ...args) => {
     const response = await pg.query(query, ...args);
     console.log(response);
