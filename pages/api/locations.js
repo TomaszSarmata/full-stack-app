@@ -1,4 +1,5 @@
 import sql from "@/utils/postgres";
+import pg from "@/utils/pg";
 
 export default async function handler(req, res) {
   let locations;
@@ -16,15 +17,24 @@ export default async function handler(req, res) {
     }
   } else {
     try {
-      const pattern = "%" + input + "%";
-      locations = await sql`
-        select * from locations
-        where title ilike ${pattern}
-    `;
-      res.status(200).json(locations);
+      locations = await pg.execute(`
+        select * from locations where title like '%${input}%'
+      `);
     } catch (error) {
-      console.error("Failed to fetch your locations:", error);
+      console.error("Failed to fetch the location/s:", error);
       res.status(500).json({ error: "Internal Server Error" });
     }
+
+    // try {
+    //   const pattern = "%" + input + "%";
+    //   locations = await sql`
+    //     select * from locations
+    //     where title ilike ${pattern}
+    // `;
+    //   res.status(200).json(locations);
+    // } catch (error) {
+    //   console.error("Failed to fetch your locations:", error);
+    //   res.status(500).json({ error: "Internal Server Error" });
+    // }
   }
 }
