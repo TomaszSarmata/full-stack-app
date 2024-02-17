@@ -2,9 +2,7 @@ import { useState } from "react";
 import MessageItem from "./message-item";
 
 export default function ListOfMessages({ messages, isLoading, getMessages }) {
-  const [successMessage, setSuccessMessage] = useState(
-    "Success. The message was deleted."
-  );
+  const [successMessage, setSuccessMessage] = useState("");
   const handleDelete = async (messageId) => {
     const response = await fetch(`/api/delete-message?messageId=${messageId}`);
     const data = await response.json();
