@@ -23,10 +23,16 @@ export default function Home() {
         <ProgramaticButton pageName="Books" href="/books"></ProgramaticButton>
       </Content>
       <div className="flex flex-wrap">
-        <Footer href="/books" pageName="Books Page"></Footer>
-        <Footer href="/locations" pageName="Locations Page"></Footer>
-        <Footer href="/contact" pageName="Contact Page"></Footer>
-        <Footer href="/search" pageName="Search Page"></Footer>
+        <Footer
+          href="/books"
+          pageName="Books Page"
+          buttons={[
+            { pageName: "Locations Page", href: "/locations" },
+            { pageName: "Books Page", href: "/books" },
+            { pageName: "Contact Page", href: "/contact" },
+            { pageName: "Search Page", href: "/search" },
+          ]}
+        ></Footer>
       </div>
     </div>
   );

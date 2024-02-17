@@ -14,7 +14,11 @@ export default function BooksPage() {
         </div>
       </Content>
 
-      <Footer href="/" pageName="Home Page"></Footer>
+      <Footer
+        href="/"
+        pageName="Home Page"
+        buttons={[{ pageName: "Home Page", href: "/" }]}
+      ></Footer>
     </div>
   );
 }
