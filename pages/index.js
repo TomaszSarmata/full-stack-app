@@ -30,7 +30,15 @@ export default function Home() {
             { pageName: "Contact Page", href: "/contact" },
             { pageName: "Search Page", href: "/search" },
           ]}
-        ></Footer>
+        >
+          <Link
+            href="/"
+            type="button"
+            className="bg-yellow-500 text-white text-sm text-center px-3 py-2 rounded-md"
+          >
+            Home
+          </Link>
+        </Footer>
       </div>
     </div>
   );
