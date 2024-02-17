@@ -59,11 +59,7 @@ export default function Search() {
           ))}
         </div>
       </Content>
-      <Footer
-        pageName="Home"
-        href="/"
-        buttons={[{ pageName: "Home Page", href: "/" }]}
-      ></Footer>
+      <Footer buttons={[{ pageName: "Home Page", href: "/" }]}></Footer>
     </div>
   );
 }

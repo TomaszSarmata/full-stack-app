@@ -119,11 +119,7 @@ export default function Contact() {
         ></ListOfMessages>
       </Content>
 
-      <Footer
-        pageName="Home"
-        href="/"
-        buttons={[{ pageName: "Home Page", href: "/" }]}
-      ></Footer>
+      <Footer buttons={[{ pageName: "Home Page", href: "/" }]}></Footer>
       {modal ? (
         <div className="w-full h-screen bg-white bg-opacity-80 absolute top-0 left-0 flex items-center justify-center">
           <div className="w-96 text-gray-700 bg-gray-300 py-10 px-16 rounded-lg shadow-md">

@@ -16,11 +16,7 @@ export default function BooksPage() {
         <ProgramaticButton pageName="Home" href="/"></ProgramaticButton>
       </Content>
 
-      <Footer
-        href="/"
-        pageName="Home Page"
-        buttons={[{ pageName: "Home Page", href: "/" }]}
-      ></Footer>
+      <Footer buttons={[{ pageName: "Home Page", href: "/" }]}></Footer>
     </div>
   );
 }

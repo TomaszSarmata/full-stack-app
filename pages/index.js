@@ -24,8 +24,6 @@ export default function Home() {
       </Content>
       <div className="flex flex-wrap">
         <Footer
-          href="/books"
-          pageName="Books Page"
           buttons={[
             { pageName: "Locations Page", href: "/locations" },
             { pageName: "Books Page", href: "/books" },
