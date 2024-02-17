@@ -2,7 +2,9 @@ import { useState } from "react";
 import MessageItem from "./message-item";
 
 export default function ListOfMessages({ messages, isLoading, getMessages }) {
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState(
+    "Success. The message was deleted."
+  );
   const handleDelete = async (messageId) => {
     const response = await fetch(`/api/delete-message?messageId=${messageId}`);
     const data = await response.json();
@@ -29,7 +31,7 @@ export default function ListOfMessages({ messages, isLoading, getMessages }) {
           }}
         ></MessageItem>
       ))}
-      <span className="absolute left-1/2 translate-x-[-50%] translate-y-[-150%] text-green-500">
+      <span className="w-full text-center absolute left-1/2 translate-x-[-50%] translate-y-[-150%]  text-green-500">
         {successMessage}
       </span>
     </div>
