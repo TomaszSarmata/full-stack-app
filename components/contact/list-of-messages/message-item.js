@@ -34,6 +34,7 @@ export default function MessageItem({ message, onDelete }) {
         <div className="mb-2">Delete Message?</div>
         <div className="w-full flex justify-center gap-x-2">
           <button
+            disabled={!modalOpacity}
             className="w-1/6 bg-red-500 text-white px-2 py-1 rounded"
             onClick={() => onDelete(message.id)}
           >
