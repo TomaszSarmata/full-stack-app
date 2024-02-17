@@ -1,13 +1,18 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import ProgramaticButton from "@/components/shared/programmatic-button";
 import Content from "@/components/shared/content";
 import Hero from "@/components/home/hero";
 import Topics from "@/components/home/hero/topics";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [data, setData] = useState("");
+  useEffect(() => {
+    localStorage.setItem("password", "sensitive data");
+    const info = localStorage.getItem("password");
+    setData(info);
+  });
   return (
     <div className="w-full">
       <Header name="Home Page"></Header>
