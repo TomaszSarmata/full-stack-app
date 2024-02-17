@@ -117,6 +117,7 @@ export default function Contact() {
         <ListOfMessages
           messages={messages}
           isLoading={isLoading}
+          getMessages={getMessages}
         ></ListOfMessages>
       </Content>
 
