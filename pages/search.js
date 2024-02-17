@@ -4,6 +4,7 @@ import Footer from "@/components/shared/footer";
 import Input from "@/components/forms/input";
 import { useEffect, useState } from "react";
 import LocationItem from "@/components/search/location-item";
+import Link from "next/link";
 
 export default function Search() {
   const [locations, setLocations] = useState([]);
@@ -59,7 +60,15 @@ export default function Search() {
           ))}
         </div>
       </Content>
-      <Footer buttons={[{ pageName: "Home Page", href: "/" }]}></Footer>
+      <Footer buttons={[{ pageName: "Home Page", href: "/" }]}>
+        <Link
+          href="/"
+          type="button"
+          className="bg-yellow-500 text-white text-sm text-center px-3 py-2 rounded-md"
+        >
+          Home
+        </Link>
+      </Footer>
     </div>
   );
 }

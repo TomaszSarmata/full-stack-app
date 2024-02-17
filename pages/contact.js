@@ -3,6 +3,7 @@ import Header from "@/components/shared/header";
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 import ListOfMessages from "@/components/contact/list-of-messages";
 
@@ -119,7 +120,15 @@ export default function Contact() {
         ></ListOfMessages>
       </Content>
 
-      <Footer buttons={[{ pageName: "Home Page", href: "/" }]}></Footer>
+      <Footer buttons={[{ pageName: "Home Page", href: "/" }]}>
+        <Link
+          href="/"
+          type="button"
+          className="bg-yellow-500 text-white text-sm text-center px-3 py-2 rounded-md"
+        >
+          Home
+        </Link>
+      </Footer>
       {modal ? (
         <div className="w-full h-screen bg-white bg-opacity-80 absolute top-0 left-0 flex items-center justify-center">
           <div className="w-96 text-gray-700 bg-gray-300 py-10 px-16 rounded-lg shadow-md">
