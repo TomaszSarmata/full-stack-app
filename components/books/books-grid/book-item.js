@@ -55,14 +55,15 @@ export default function BookItem({ book }) {
           onClick={handleLike}
           className="bg-blue-500 text-white px-3 py-1 rounded-md"
         >
-          Like ({likes} {pluralLikes()})
+          <span className="text-shadow">👍</span> ({likes} {pluralLikes()})
         </button>
         <button
           type="button"
           onClick={handleDislike}
           className="bg-red-500 text-white px-3 py-1 rounded-md"
         >
-          Dislike ({dislikes} {pluralDislikes()})
+          <span className="text-shadow">👎</span> ({dislikes} {pluralDislikes()}
+          )
         </button>
       </div>
     </div>

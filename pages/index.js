@@ -22,7 +22,7 @@ export default function Home() {
         <Topics></Topics>
         <ProgramaticButton pageName="Books" href="/books"></ProgramaticButton>
       </Content>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap">
         <Footer href="/books" pageName="Books Page"></Footer>
         <Footer href="/locations" pageName="Locations Page"></Footer>
         <Footer href="/contact" pageName="Contact Page"></Footer>

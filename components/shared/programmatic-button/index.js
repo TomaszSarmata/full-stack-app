@@ -11,7 +11,7 @@ export default function ProgramaticButton({ href, pageName }) {
   return (
     <button
       onClick={handleClick}
-      className="bg-blue-500 text-white py-1 px-3 rounded-md shadow-md hidden md:block"
+      className="bg-blue-500 text-white py-1 px-3 mt-8 rounded-md shadow-md hidden md:block"
     >
       Click me!<br></br>
       <span className="text-xs text-gray-200">programatic navigation</span>
