@@ -22,11 +22,12 @@ export default function Home() {
         <Topics></Topics>
         <ProgramaticButton pageName="Books" href="/books"></ProgramaticButton>
       </Content>
-
-      <Footer href="/books" pageName="Books Page"></Footer>
-      <Footer href="/locations" pageName="Locations Page"></Footer>
-      <Footer href="/contact" pageName="Contact Page"></Footer>
-      <Footer href="/search" pageName="Search Page"></Footer>
+      <div className="flex flex-wrap gap-4">
+        <Footer href="/books" pageName="Books Page"></Footer>
+        <Footer href="/locations" pageName="Locations Page"></Footer>
+        <Footer href="/contact" pageName="Contact Page"></Footer>
+        <Footer href="/search" pageName="Search Page"></Footer>
+      </div>
     </div>
   );
 }
