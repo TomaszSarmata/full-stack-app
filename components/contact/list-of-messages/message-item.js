@@ -38,7 +38,6 @@ export default function MessageItem({ message, onDelete }) {
             className="w-1/5 bg-red-500 text-white px-2 py-1 rounded flex gap-2"
             onClick={() => onDelete(message.id)}
           >
-            <span>Yes</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -57,6 +56,7 @@ export default function MessageItem({ message, onDelete }) {
               <line x1="10" x2="10" y1="11" y2="17" />
               <line x1="14" x2="14" y1="11" y2="17" />
             </svg>
+            <span>Yes</span>
           </button>
           <button
             className="w-1/5 bg-blue-500 text-white px-2 py-1 rounded"
