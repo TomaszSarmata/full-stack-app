@@ -5,6 +5,7 @@ import Hero from "@/components/home/hero";
 import Footer from "@/components/shared/footer";
 import Content from "@/components/shared/content";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Link from "next/link";
 
 export default function SingleBook() {
   const [singleBook, setSingleBook] = useState(null);
@@ -84,17 +85,22 @@ export default function SingleBook() {
           </div>
         </div>
       </Content>
-      <div className="flex flex-col md:flex-row justify-start gap-2 w-1/2 md:w-2/3 ml-2">
-        <Footer
-          pageName="previous book"
-          href={`/single-book/${getPreviousBookId()}`}
-        ></Footer>
-        <Footer
-          pageName="next book"
-          href={`/single-book/${getNextBookId()}`}
-        ></Footer>
-        <Footer pageName="books page" href="/books"></Footer>
-      </div>
+      <Footer
+        buttons={[
+          {
+            pageName: "previous book",
+            href: `/single-book/${getPreviousBookId()}`,
+          },
+          {
+            pageName: "next book",
+            href: `/single-book/${getNextBookId()}`,
+          },
+          {
+            pageName: "Books Page",
+            href: "/books",
+          },
+        ]}
+      ></Footer>
     </div>
   );
 }
