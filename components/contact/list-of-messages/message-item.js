@@ -59,7 +59,6 @@ export default function MessageItem({ message, onDelete }) {
         )}
       </p>
       <p>{message.message}</p>
-      <p>{message.id}</p>
     </div>
   );
 }
