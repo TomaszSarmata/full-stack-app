@@ -4,7 +4,12 @@ import MessageItem from "./message-item";
 export default function ListOfMessages({ messages, isLoading, getMessages }) {
   const [successMessage, setSuccessMessage] = useState("");
   const handleDelete = async (messageId) => {
-    const response = await fetch(`/api/delete-message?messageId=${messageId}`);
+    const response = await fetch(`/api/delete-message?messageId=${messageId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     getMessages();
     setSuccessMessage(data.message);
